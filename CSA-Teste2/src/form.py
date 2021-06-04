@@ -59,7 +59,7 @@ class Form(FormElement):
             df = pd.DataFrame(lista_final, columns=['Titulos', 'Data', 'Conteudos', 'Links-Images'])
             df.to_excel('teste02csa.xlsx', index=False)
 
-            contato = self.webdriver.find_element_by_class_name("icon-envelope-alt")
+            contato = self.webdriver.find_element_by_class_name("icon-envelope-alt").implicitly_wait(30)
             contato.click()
 
     def create_form(self, nome, empresa, telefone, email, website, mensagem):
